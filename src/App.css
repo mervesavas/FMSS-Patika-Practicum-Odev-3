@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+}
+.homeWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('./Assets/sky.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    gap: 20px;
+}
+.stateMenu{
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    color: #000;
+    font-weight: 700;
+    box-shadow: 0 0 30px -5px #00000040;
+    cursor: pointer;
+    transition: transform .2s ease;
+    transition: transform .2s ease,-webkit-transform .2s ease;
+    width: 350px;
+    background-color: #bcccde;
+}
+.cardWrap {
+    
+    background: rgba(0,0,0,0.2);
+    border-radius: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+}
+.cardList {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.cardList::after, .cardList::before{
+    content: '';
+    overflow: hidden;
+    clear: both;
+    display: table;
+}
+.cardList > li {
+    float: left;
+    padding: 15px;
+    cursor: pointer;
+    transition: .2s ease;
+    width: 100px;
+   
+}
+.day-icon {
+    display: block;
+    height: 40px;
+    width: auto;
+    margin: 0 auto;
+}
+.day-name {
+    display: block;
+    margin: 10px 0 0;
+    text-align: center;
+    color: #fff;
+}
+.day-temp {
+    display: block;
+    text-align: center;
+    margin: 10px 0 0;
+    font-weight: 700;
+    color: #fff;
+}
+.cardList > li.active{
+    background: #bcccde;
+    border-radius: 10px;
+}
+.cardList > li:hover{
+    background: #bcccde;
+    border-radius: 10px;
+    box-shadow: 0 0 40px -5px #0003;
+}
+.dateDay, .locationName {
+    display: block;
+}
+.locationName{
+    margin-top: 10px;
+}
+.weatherTemp {
+    margin: 0;
+    font-weight: 700;
+    font-size: 4em;
+}
+@media (max-width: 576px) {
+    .cardWrap{
+        width: 100%;
+    }
+    .cardList {
+        flex-direction: column;
+        width: 100%;
+
+    }
+    .cardList > li {
+        width: 100%;
+
+    }
+    .stateWrap{
+        width: 100%;
+    }
+    .stateMenu{
+        width: 100%!important;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .weatherSection, .homeWrap, .leftWrap, .rightSide{
+        display: block;
+        height: auto;
+        float:none;
+    }
+    .weatherSection{
+        margin:0;
+    }
+    .stateMenu{
+        width: auto;
+    }
+    h2{margin: 0;}
+    .rightSide{padding-left:25px;}
+    .cardWrap{margin-top: 20px;padding-top:10px;padding-bottom:10px;}
+}
